@@ -19,8 +19,6 @@ for F in (TypeSym,)
 @inline ispositive{T<:($F)}(x::T)    = (ispositive(x.re))
 @inline isnonpositive{T<:($F)}(x::T) = (isnonpositive(x.re))
 
-zero{T<:($F)}(::Type{T}) = ($F)(Re(0.0))
-one{T<:($F)}(::Type{T}) = ($F)(Re(1.0))
 
 function (-){T<:($F)}(a::T)
     re = (-)(a.re)
