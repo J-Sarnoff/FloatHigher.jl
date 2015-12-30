@@ -2,7 +2,7 @@
 accurate floating point math at extended precisions
 
 ```ruby
-                      Jeffrey A. Sarnoff                     2015-Dec-30 03:21:21 UTC
+                    Jeffrey A. Sarnoff                     2015-Dec-30 03:21:21 UTC
 ```                    
 
 
