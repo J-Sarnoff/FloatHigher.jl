@@ -8,8 +8,8 @@ accurate floating point math at extended precisions
 
 
 *__+__*  
-   Calculations are substantially faster than BigFloat.
-   Accuracy more consistently tracks displayed precision than BigFloat.
+   Calculations are substantially faster than BigFloat.  
+   Accuracy more consistently tracks displayed precision than BigFloat.  
 
 *__-__*  
    Pulls in all of Nemo to use some of Arb.  
