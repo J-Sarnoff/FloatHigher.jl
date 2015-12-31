@@ -75,6 +75,38 @@ TypeSym = :Float1024; RoundDigs=304; FmtStr="%0.304g"
 include("type.jl")
 end
 
-if isdefined(Main,:UseFloat
+# intertype promotion
+
+if isdefined(:Float128)
+
+if isdefined(:Float256)
+  promote_rule(::Type{Float128}, ::Type{Float256}) = Float128
+  convert(::Type{Float128}, x::Float256) = Float128(x.re)
+elseif isdefined(:Float512)
+  promote_rule(::Type{Float128}, ::Type{Float512}) = Float128
+  convert(::Type{Float128}, x::Float512) = Float128(x.re)
+elseif isdefined(:Float1024)
+  promote_rule(::Type{Float128}, ::Type{Float1024}) = Float128
+  convert(::Type{Float128}, x::Float1024) = Float128(x.re)
+end
+
+elseif isdefined(:Float256)
+
+if isdefined(:Float512)
+  promote_rule(::Type{Float256}, ::Type{Float512}) = Float256
+  convert(::Type{Float256}, x::Float512) = Float256(x.re)
+elseif isdefined(:Float1024)
+  promote_rule(::Type{Float256}, ::Type{Float1024}) = Float256
+  convert(::Type{Float256}, x::Float1024) = Float256(x.re)
+end
+
+elseif isdefined(:Float512)
+
+if isdefined(:Float1024)
+  promote_rule(::Type{Float512}, ::Type{Float1024}) = Float512
+  convert(::Type{Float512}, x::Float1024) = Float512(x.re)
+end
+
+end # promotions
 
 end # FloatHigher
