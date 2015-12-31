@@ -43,7 +43,7 @@ immutable (Float256) <: Real
    re::Ball
 end
 Real256 = ArbField(288)
-convert{T<:SystemNum}(::Type{Float128}, x::T) = (Float256)(Real256(x))
+convert{T<:SystemNum}(::Type{Float256}, x::T) = (Float256)(Real256(x))
 
 TypeSym = :Float256; RoundDigs=76; FmtStr="%0.76g"
 include("type.jl")
@@ -74,5 +74,7 @@ convert{T<:SystemNum}(::Type{Float1024}, x::T) = (Float1024)(Real1024(x))
 TypeSym = :Float1024; RoundDigs=304; FmtStr="%0.304g"
 include("type.jl")
 end
+
+if isdefined(Main,:UseFloat
 
 end # FloatHigher
