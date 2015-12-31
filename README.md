@@ -25,9 +25,9 @@ and gain speed and provide more transparent accuracy when working with extended 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.. with the hope this will have helped ..
 
 =====
-
->       These types are available as separate modules, if you prefer:  
->       Floats128.jl, Floats256.jl, Floats512.jl, Floats1024.jl
+-----
+> >       These types are available as separate modules, if you prefer:  
+> >       Floats128.jl, Floats256.jl, Floats512.jl, Floats1024.jl
 
 ----
 Float128, Float256, Float512, aor Float1024 are selected before 'using' this module;  
