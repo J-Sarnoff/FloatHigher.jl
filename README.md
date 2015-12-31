@@ -27,8 +27,9 @@ and gain speed and provide more transparent accuracy when working with extended 
 -----
 =====
 Float128, Float256, Float512, aor Float1024 are selected before 'using' this module.  
-[ Or, separately: Floats128.jl, Floats256.jl, Floats512.jl, Floats1024.jl ]  
-when none are explicitly selected, Float128 is used:  
+[ Or, in separate modules: Floats128.jl, Floats256.jl, Floats512.jl, Floats1024.jl ]  
+When none are explicitly selected, Float128 is used.
+=====
 
 
 ```julia
