@@ -59,7 +59,8 @@ julia> asin(Float1024(0.5))*6
 
 ```
 
-Float128, Float256, Float512, Float1024 can be used together.  Intertype promotion defers to the smaller type (otherwise the result could become quite inaccurate invisibly):
+Float128, Float256, Float512, Float1024 can be used together.  
+Intertype promotion defers to the smaller type (otherwise the result could become quite inaccurate invisibly):
 
 ```julia
 UseFloat256=true
