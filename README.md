@@ -29,7 +29,7 @@ and gain speed and provide more transparent accuracy when working with extended 
 ----
 Float128, Float256, Float512, aor Float1024 are selected before 'using' this module:
 
-```
+```julia
 using FloatMore
 julia> a=Float128(2);sqrt2=sqrt(a)
 1.4142135623730950488016887242096980786
@@ -56,6 +56,22 @@ julia> asin(Float1024(0.5))*6
  8111745028410270193852110555964462294895493038196442881097566593344612847564  
  8233786783165271201909145648566923460348610454326648213393607260249141273725  
  
+
+```
+
+Float128, Float256, Float512, Float1024 can be used together.  Intertype promotion defers to the smaller type (otherwise the result could become quite inaccurate invisibly):
+
+```julia
+UseFloat256=true
+UseFloat1024=true
+using FloatHigher
+
+a=sqrt(Float256(256))
+16
+b=sqrt(Float1024(1024))
+32
+c=a+b; c, typeof(c)
+48, Float256
 
 ```
 
