@@ -24,12 +24,13 @@ and gain speed and provide more transparent accuracy when working with extended 
   This is as far as I am comfortable taking Julia's search for a first class Float128 implementation.  
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.. with the hope this will have helped ..
 
-=====
 -----
-> >       These types are available as separate modules, if you prefer:  
-> >       Floats128.jl, Floats256.jl, Floats512.jl, Floats1024.jl
-
-----
+=====
+```
+       These types also are made available as separate modules:
+       Floats128.jl, Floats256.jl, Floats512.jl, Floats1024.jl
+```
+=====
 Float128, Float256, Float512, aor Float1024 are selected before 'using' this module;  
 when none are explicitly selected, Float128 is used:
 
