@@ -27,26 +27,26 @@ and gain speed and provide more transparent accuracy when working with extended 
 -----
 =====
 
-Digits35, Digits75, Digits150, aor Digits300 are selected before 'using' this module 
-( or, in separate modules: DIGITS35.jl, DIGITS75.jl, DIGITS150.jl, DIGITS300.jl ).  
-When none are explicitly selected, Float128 is used.  
+Digits30, Digits70, Digits140, aor Digits300 are selected before 'using' this module 
+( or, in separate modules: DIGITS30.jl, DIGITS70.jl, DIGITS140.jl, DIGITS300.jl ).  
+When none are explicitly selected, Digits30 is used.  
 
 
 ```julia
 using FloatHigher
-julia> a=Digits35(2);sqrt2=sqrt(a)
+julia> a=Digits30(2);sqrt2=sqrt(a)
 1.4142135623730950488016887242096980786
 quit()
 
-UseDigits75=true
+UseDigits70=true
 using FloatHigher
-julia> a=Digits75(2);sqrt2=sqrt(a)
+julia> a=Digits70(2);sqrt2=sqrt(a)
 1.414213562373095048801688724209698078569671875376948073176679737990732478462
 quit()
 
-UseDigits150=true
+UseDigits140=true
 using FloatHigher
-julia> a=Digits150(0.5);println(exp(a));a-log(exp(a))
+julia> a=Digits140(0.5);println(exp(a));a-log(exp(a))
 1.648721270700128146848650787814163571653776100710148011575079311640661021194  
  2140244768312883565706777193388588425688402538063164289228771285341140760306  
 0
@@ -62,20 +62,20 @@ julia> asin(Digits300(0.5))*6
 
 ```
 
-Digits35, Digits75, Digits150, Digits300 can be used together.  
+Digits30, Digits70, Digits140, Digits300 can be used together.  
 Intertype promotion defers to the smaller type (otherwise the result could become quite inaccurate invisibly):
 
 ```julia
-UseDigits75=true
+UseDigits70=true
 UseDigits300=true
 using FloatHigher
 
-a=sqrt(Digits75(256))
+a=sqrt(Digits70(256))
 16
 b=sqrt(Digits300(1024))
 32
 c=a+b; c, typeof(c)
-48, Digits75
+48, Digits70
 
 ```
 
