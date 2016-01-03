@@ -27,33 +27,33 @@ and gain speed and provide more transparent accuracy when working with extended 
 -----
 =====
 
-Float128, Float256, Float512, aor Float1024 are selected before 'using' this module 
-( or, in separate modules: Floats128.jl, Floats256.jl, Floats512.jl, Floats1024.jl ).  
+Digits35, Digits75, Digits150, aor Digits300 are selected before 'using' this module 
+( or, in separate modules: DIGITS35.jl, DIGITS75.jl, DIGITS150.jl, DIGITS300.jl ).  
 When none are explicitly selected, Float128 is used.  
 
 
 ```julia
 using FloatHigher
-julia> a=Float128(2);sqrt2=sqrt(a)
+julia> a=Digits35(2);sqrt2=sqrt(a)
 1.4142135623730950488016887242096980786
 quit()
 
-UseFloat256=true
+UseDigits75=true
 using FloatHigher
-julia> a=Float256(2);sqrt2=sqrt(a)
+julia> a=Digits75(2);sqrt2=sqrt(a)
 1.414213562373095048801688724209698078569671875376948073176679737990732478462
 quit()
 
-UseFloat512=true
+UseDigits150=true
 using FloatHigher
-julia> a=Float512(0.5);println(exp(a));a-log(exp(a))
+julia> a=Digits150(0.5);println(exp(a));a-log(exp(a))
 1.648721270700128146848650787814163571653776100710148011575079311640661021194  
  2140244768312883565706777193388588425688402538063164289228771285341140760306  
 0
 
-UseFloat1024=true
+UseDigits300=true
 using FloatHigher
-julia> asin(Float1024(0.5))*6
+julia> asin(Digits300(0.5))*6
 3.141592653589793238462643383279502884197169399375105820974944592307816406286  
  2089986280348253421170679821480865132823066470938446095505822317253594081284  
  8111745028410270193852110555964462294895493038196442881097566593344612847564  
@@ -62,20 +62,20 @@ julia> asin(Float1024(0.5))*6
 
 ```
 
-Float128, Float256, Float512, Float1024 can be used together.  
+Digits35, Digits75, Digits150, Digits300 can be used together.  
 Intertype promotion defers to the smaller type (otherwise the result could become quite inaccurate invisibly):
 
 ```julia
-UseFloat256=true
-UseFloat1024=true
+UseDigits75=true
+UseDigits300=true
 using FloatHigher
 
-a=sqrt(Float256(256))
+a=sqrt(Digits75(256))
 16
-b=sqrt(Float1024(1024))
+b=sqrt(Digits300(1024))
 32
 c=a+b; c, typeof(c)
-48, Float256
+48, Digits75
 
 ```
 
