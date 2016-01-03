@@ -62,16 +62,16 @@ TypeSym = :Digits140; RoundDigs=140; FmtStr="%0.140g"
 include("type.jl")
 end
 
-if isdefined(Main,:UseFloat1024) && Main.UseFloat1024==true
-export Float1024
+if isdefined(Main,:UseDigits300) && Main.UseDigits300==true
+export Digits300
 
-immutable (Float1024) <: Real
+immutable (Digits300) <: Real
    re::Ball
 end
-Real1024 = ArbField(1088)
-convert{T<:SystemNum}(::Type{Float1024}, x::T) = (Float1024)(Real1024(x))
+Real300 = ArbField(1023)
+convert{T<:SystemNum}(::Type{Digits300}, x::T) = (Digits300)(Real300(x))
 
-TypeSym = :Float1024; RoundDigs=304; FmtStr="%0.304g"
+TypeSym = :Digits300; RoundDigs=300; FmtStr="%0.300g"
 include("type.jl")
 end
 
