@@ -23,7 +23,7 @@ typealias Ball arb # types are capitalized in Julia
 typealias SystemNum Union{Float64,Float32,Float16,Int128,Int64,Int32,Int16}
 
 
-if isdefined(Main,:UseDigits30) || (!isdefined(Main,:UseDigits70) & !isdefined(Main,:UseDigits150) & !isdefined(Main,:UseDigits300))
+if isdefined(Main,:UseDigits30) || (!isdefined(Main,:UseDigits70) & !isdefined(Main,:UseDigits140) & !isdefined(Main,:UseDigits300))
 export Digits30
 
 immutable (Digits30) <: Real
@@ -49,16 +49,16 @@ TypeSym = :Digits70; RoundDigs=70; FmtStr="%0.70g"
 include("type.jl")
 end
 
-if isdefined(Main,:UseFloat512) && Main.UseFloat512==true
-export Float512
+if isdefined(Main,:UseDigits140) && Main.UseDigits140==true
+export Digits140
 
-immutable (Float512) <: Real
+immutable (Digits140) <: Real
    re::Ball
 end
-Real512 = ArbField(544)
-convert{T<:SystemNum}(::Type{Float512}, x::T) = (Float512)(Real512(x))
+Real140 = ArbField(511)
+convert{T<:SystemNum}(::Type{Digits140}, x::T) = (Float512)(Real140(x))
 
-TypeSym = :Float512; RoundDigs=152; FmtStr="%0.152g"
+TypeSym = :Digits140; RoundDigs=140; FmtStr="%0.140g"
 include("type.jl")
 end
 
