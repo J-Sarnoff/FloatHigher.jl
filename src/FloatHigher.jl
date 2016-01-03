@@ -22,6 +22,7 @@ import Nemo: ArbField, arb,
 typealias Ball arb # types are capitalized in Julia
 typealias SystemNum Union{Float64,Float32,Float16,Int128,Int64,Int32,Int16}
 
+export showball
 
 if isdefined(Main,:UseDigits30) || (!isdefined(Main,:UseDigits70) & !isdefined(Main,:UseDigits140) & !isdefined(Main,:UseDigits300))
 export Digits30
