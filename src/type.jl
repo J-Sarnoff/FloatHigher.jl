@@ -95,5 +95,9 @@ function showball(io::IO, x::($F))
     print(io,string(x.re))
 end
 
+function showball(x::($F))
+    showball(STDOUT, x)
+end    
+
 end # @eval
 end # $F $Digs $Fmt
