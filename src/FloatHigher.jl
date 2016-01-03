@@ -23,16 +23,16 @@ typealias Ball arb # types are capitalized in Julia
 typealias SystemNum Union{Float64,Float32,Float16,Int128,Int64,Int32,Int16}
 
 
-if isdefined(Main,:UseFloat128) || (!isdefined(Main,:UseFloat256) & !isdefined(Main,:UseFloat512) & !isdefined(Main,:UseFloat1024))
-export Float128
+if isdefined(Main,:UseDigits30) || (!isdefined(Main,:UseDigits75) & !isdefined(Main,:UseDigits150) & !isdefined(Main,:UseDigits300))
+export Digits30
 
-immutable (Float128) <: Real
+immutable (Digits30) <: Real
    re::Ball
 end
-Real128 = ArbField(157)
-convert{T<:SystemNum}(::Type{Float128}, x::T) = (Float128)(Real128(x))
+Real30 = ArbField(127)
+convert{T<:SystemNum}(::Type{Digits30}, x::T) = (Digits30)(Real30(x))
 
-TypeSym = :Float128; RoundDigs=38; FmtStr="%0.38g"
+TypeSym = :Digits30; RoundDigs=30; FmtStr="%0.30g"
 include("type.jl")
 end
 
