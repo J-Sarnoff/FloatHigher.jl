@@ -92,7 +92,8 @@ function show(io::IO, x::($F))
 end
 
 function showball(io:IO, x::($F))
-    print(io,x)
+    print(io,string(x.re))
 end
+
 end # @eval
 end # $F $Digs $Fmt
