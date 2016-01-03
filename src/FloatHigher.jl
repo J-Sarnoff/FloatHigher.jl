@@ -56,7 +56,7 @@ immutable (Digits140) <: Real
    re::Ball
 end
 Real140 = ArbField(511)
-convert{T<:SystemNum}(::Type{Digits140}, x::T) = (Float512)(Real140(x))
+convert{T<:SystemNum}(::Type{Digits140}, x::T) = (Digits140)(Real140(x))
 
 TypeSym = :Digits140; RoundDigs=140; FmtStr="%0.140g"
 include("type.jl")
@@ -77,34 +77,34 @@ end
 
 # intertype promotion
 
-if isdefined(:Float128)
+if isdefined(:Digits30)
 
-if isdefined(:Float256)
-  promote_rule(::Type{Float128}, ::Type{Float256}) = Float128
-  convert(::Type{Float128}, x::Float256) = Float128(x.re)
-elseif isdefined(:Float512)
-  promote_rule(::Type{Float128}, ::Type{Float512}) = Float128
-  convert(::Type{Float128}, x::Float512) = Float128(x.re)
-elseif isdefined(:Float1024)
-  promote_rule(::Type{Float128}, ::Type{Float1024}) = Float128
-  convert(::Type{Float128}, x::Float1024) = Float128(x.re)
+if isdefined(:Digits70)
+  promote_rule(::Type{Digits30}, ::Type{Digits70}) = Digits30
+  convert(::Type{Digits30}, x::Digits70) = Digits30(x.re)
+elseif isdefined(:Digits140)
+  promote_rule(::Type{Digits30}, ::Type{Digits140}) = Digits30
+  convert(::Type{Digits30}, x::Digits140) = Digits30(x.re)
+elseif isdefined(:Digits300)
+  promote_rule(::Type{Digits30}, ::Type{Digits300}) = Digits30
+  convert(::Type{Digits30}, x::Digits300) = Digits30(x.re)
 end
 
-elseif isdefined(:Float256)
+elseif isdefined(:Digits70)
 
-if isdefined(:Float512)
-  promote_rule(::Type{Float256}, ::Type{Float512}) = Float256
-  convert(::Type{Float256}, x::Float512) = Float256(x.re)
-elseif isdefined(:Float1024)
-  promote_rule(::Type{Float256}, ::Type{Float1024}) = Float256
-  convert(::Type{Float256}, x::Float1024) = Float256(x.re)
+if isdefined(:Digits140)
+  promote_rule(::Type{Digits70}, ::Type{Digits140}) = Digits70
+  convert(::Type{Digits70}, x::Digits140) = Digits70(x.re)
+elseif isdefined(:Digits300)
+  promote_rule(::Type{Digits70}, ::Type{Digits300}) = Digits70
+  convert(::Type{Digits70}, x::Digits300) = Digits70(x.re)
 end
 
-elseif isdefined(:Float512)
+elseif isdefined(:Digits140)
 
-if isdefined(:Float1024)
-  promote_rule(::Type{Float512}, ::Type{Float1024}) = Float512
-  convert(::Type{Float512}, x::Float1024) = Float512(x.re)
+if isdefined(:Digits300)
+  promote_rule(::Type{Digits140}, ::Type{Digits300}) = Digits140
+  convert(::Type{Digits140}, x::Digits300) = Digits140(x.re)
 end
 
 end # promotions
