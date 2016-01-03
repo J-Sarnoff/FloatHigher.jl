@@ -91,5 +91,8 @@ function show(io::IO, x::($F))
     print(io,s)
 end
 
+function showball(io:IO, x::($F))
+    print(io,x)
+end
 end # @eval
 end # $F $Digs $Fmt
