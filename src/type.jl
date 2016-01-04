@@ -36,6 +36,12 @@ end # @eval
 end # $F
 
 for F in (TypeSym,)
+for (op) in (:(<),:(<=),:(==),:(!=),:(>=),:(>))
+    @eval ($op){T<:($F)}(a::T, b::T) = ($op)(a.re, b.re)
+end 
+end
+
+for F in (TypeSym,)
 for (op) in (:+,:-,:*,:hypot)
   @eval begin
   
