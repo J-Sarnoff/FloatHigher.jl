@@ -28,7 +28,7 @@ and gain speed and provide more transparent accuracy when working with extended 
 -----
 =====
 
-Digits30, Digits70, Digits140, aor Digits300 are selected before 'using' this module   
+Digits30, Digits70, Digits140, or Digits300 are selected before 'using' this module   
 ( or, in separate modules: DIGITS30.jl, DIGITS70.jl, DIGITS140.jl, DIGITS300.jl ).   
 When none are explicitly selected, Digits30 is used.  
 
